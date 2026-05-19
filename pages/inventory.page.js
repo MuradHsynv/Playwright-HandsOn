@@ -1,4 +1,4 @@
-class InventoryPage {
+export class InventoryPage {
   constructor(page) {
     this.page = page;
     this.title = page.locator('.title');
@@ -41,5 +41,3 @@ class InventoryPage {
     return texts.map(t => parseFloat(t.replace('$', '')));
   }
 }
-
-module.exports = { InventoryPage };
