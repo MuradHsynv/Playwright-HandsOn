@@ -1,0 +1,28 @@
+{
+  "name": "pw-handson",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "local": "cross-env TEST_ENV=local npx playwright test",
+    "stage": "cross-env TEST_ENV=stage npx playwright test",
+    "prod": "cross-env TEST_ENV=prod npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.0"
+  },
+  "dependencies": {
+    "playwright": "^1.60.0",
+    "playwright-core": "^1.60.0",
+    "undici-types": "^7.24.6",
+    "cross-env": "^7.0.3"
+  },
+  "description": ""
+}
