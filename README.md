@@ -1,36 +1,50 @@
-Playwright Test Automation Framework (TAF) — Hands-on Exercise
+# Playwright Test Automation Framework (TAF) — Hands-on Exercise
 
-Prerequisites:
-  
-  Node.js v18+
-  
-  Visual Studio Code (recommended)
+A comprehensive test automation framework built with Playwright for testing web applications across multiple environments and devices.
 
-Installation:
-  
-  npm install
-  
-  npx playwright install
+## Prerequisites
 
-Project layout:
-  
-  pw-handson/
-    playwright.config.js
-    fixtures.js
-    pages/
-      login.page.js
-      inventory.page.js
-    tests/
-      global-setup.js
-      ui.spec.js
-      mobile.spec.js
-      api.spec.js
-    state.json
+- **Node.js** v18 or higher
+- **Visual Studio Code** (recommended)
 
-Running the tests:
-  
-  npm run local
-  
-  npm run stage (default)
-  
-  npm run prod
+## Installation
+
+```bash
+npm install
+npx playwright install
+```
+
+## Project Structure
+
+```
+pw-handson/
+├── playwright.config.js      # Playwright configuration
+├── fixtures.js               # Shared test fixtures
+├── pages/
+│   ├── login.page.js        # Login page object
+│   └── inventory.page.js    # Inventory page object
+├── tests/
+│   ├── global-setup.js      # Global setup configuration
+│   ├── ui.spec.js           # UI tests
+│   ├── mobile.spec.js       # Mobile tests
+│   └── api.spec.js          # API tests
+└── state.json               # Test state file
+```
+
+## Running Tests
+
+Run tests in different environments:
+
+```bash
+npm run local          # Run locally
+npm run stage          # Run in staging (default)
+npm run prod           # Run in production
+```
+
+## Features
+
+- Cross-browser testing (Chromium, Firefox, WebKit)
+- Mobile device emulation
+- API testing capabilities
+- Reusable page objects
+- Global setup and state management

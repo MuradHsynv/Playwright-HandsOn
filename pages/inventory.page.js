@@ -6,6 +6,7 @@ export class InventoryPage {
     this.prices = page.locator('.inventory_item_price');
     this.firstImage = page.locator('.inventory_item_img').first();
     this.addBackpack = page.locator('[data-test="add-to-cart-sauce-labs-backpack"]');
+    this.addLight = page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]');
     this.cartBadge = page.locator('.shopping_cart_badge');
     this.cartLink = page.locator('.shopping_cart_link');
     this.burgerBtn = page.locator('#react-burger-menu-btn');
@@ -20,8 +21,12 @@ export class InventoryPage {
     await this.sortSelect.selectOption(val); 
   }
   
-  async addToCart() { 
+  async addBackpackToCart() { 
     await this.addBackpack.click(); 
+  }
+
+  async addLightToCart() { 
+    await this.addLight.click(); 
   }
   
   async hoverImg() { 

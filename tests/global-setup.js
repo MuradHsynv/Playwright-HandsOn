@@ -1,6 +1,9 @@
 import { test as setup, expect } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const STORAGE_STATE = path.resolve('state.json');
 
@@ -17,8 +20,8 @@ setup('accept cookies and login', async ({ page, context }) => {
   }
 
   // Login
-  await page.locator('[data-test="username"]').fill('standard_user');
-  await page.locator('[data-test="password"]').fill('secret_sauce');
+  await page.locator('[data-test="username"]').fill(process.env.APP_USERNAME);
+  await page.locator('[data-test="password"]').fill(process.env.APP_PASSWORD);
   await page.locator('[data-test="login-button"]').click();
   await page.waitForURL('**/inventory.html');
   await expect(page.locator('.title')).toHaveText('Products');

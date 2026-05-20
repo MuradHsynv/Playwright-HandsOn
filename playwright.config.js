@@ -1,4 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 /** @type {Record<string, string>} */
 const environments = {
@@ -17,8 +20,6 @@ const apis = {
 const currentEnv = process.env.TEST_ENV || 'stage';
 const baseURL = environments[currentEnv];
 const apiURL = apis[currentEnv];
-
-export const API_BASE_URL = apiURL;
 
 /**
  * @see https://playwright.dev/docs/test-configuration

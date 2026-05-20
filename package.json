@@ -19,10 +19,11 @@
     "@types/node": "^25.9.0"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^17.4.2",
     "playwright": "^1.60.0",
     "playwright-core": "^1.60.0",
-    "undici-types": "^7.24.6",
-    "cross-env": "^7.0.3"
+    "undici-types": "^7.24.6"
   },
   "description": ""
 }
