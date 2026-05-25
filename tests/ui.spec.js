@@ -1,4 +1,5 @@
 import { test, expect } from '../fixtures.js';
+import formData from '../data/formData.json';
 
 test.describe('SauceDemo UI Testing', () => {
 
@@ -102,18 +103,18 @@ test.describe('SauceDemo UI Testing', () => {
 
     test('fill info and complete checkout successfully', async ({ checkoutPage }) => {
       await checkoutPage.completeCheckout({
-        firstName: 'Murad',
-        lastName: 'Huseynov',
-        postalCode: '123456',
+        firstName: formData.name,
+        lastName: formData.surname,
+        postalCode: formData.postalCode,
       });
       await expect(checkoutPage.completeHeader, 'Checkout complete header should display thank you message').toHaveText('Thank you for your order!');
     });
 
     test('Complete checkout successfully', async ({ checkoutPage }) => {
       await checkoutPage.typeInfo({
-        firstName: 'Murad',
-        lastName: 'Huseynov',
-        postalCode: '123456',
+        firstName: formData.name,
+        lastName: formData.surname,
+        postalCode: formData.postalCode,
       });
       await checkoutPage.continue();
       await checkoutPage.finish();
@@ -121,7 +122,7 @@ test.describe('SauceDemo UI Testing', () => {
     });
 
     test('missing first name shows validation error', async ({ checkoutPage }) => {
-      await checkoutPage.fillInfo({ firstName: '', lastName: 'Huseynov', postalCode: '123456' });
+      await checkoutPage.fillInfo({ firstName: '', lastName: formData.surname, postalCode: formData.postalCode });
       await checkoutPage.continue();
       const err = await checkoutPage.getError();
       expect(err, 'Error message should indicate missing first name').toContain('First Name is required');

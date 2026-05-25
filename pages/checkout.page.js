@@ -2,20 +2,20 @@ export class CheckoutPage {
   constructor(page) {
     this.page = page;
 
-    this.checkoutBtn = page.locator('[data-test="checkout"]');
+    this.checkoutBtn = page.getByTestId('checkout');
 
     // Step one — customer information
-    this.firstName  = page.locator('[data-test="firstName"]');
-    this.lastName   = page.locator('[data-test="lastName"]');
-    this.postalCode = page.locator('[data-test="postalCode"]');
-    this.continueBtn = page.locator('[data-test="continue"]');
-    this.errorMsg    = page.locator('[data-test="error"]');
+    this.firstName  = page.getByTestId('firstName');
+    this.lastName   = page.getByTestId('lastName');
+    this.postalCode = page.getByTestId('postalCode');
+    this.continueBtn = page.getByTestId('continue');
+    this.errorMsg    = page.getByTestId('error');
 
     // Step two — overview of the items
-    this.finishBtn = page.locator('[data-test="finish"]');
+    this.finishBtn = page.getByTestId('finish');
 
     // Complete checkout
-    this.completeHeader = page.locator('.complete-header');
+    this.completeHeader = page.getByTestId('complete-header');
   }
 
   // Start checkout from the cart page

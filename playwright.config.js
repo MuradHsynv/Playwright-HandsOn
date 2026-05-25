@@ -32,6 +32,7 @@ export default defineConfig({
   workers: 4,
   reporter: 'html',
   use: {
+    testIdAttribute: 'data-test',
     baseURL,
     trace: 'retain-on-failure',
     video: 'retain-on-failure',

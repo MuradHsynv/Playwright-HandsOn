@@ -1,9 +1,9 @@
 export class CartPage {
   constructor(page) {
     this.page = page;
-    this.cartItemNames = page.locator('[data-test="inventory-item-name"]');
-    this.continueShoppingBtn = page.locator('[data-test="continue-shopping"]');
-    this.checkoutBtn = page.locator('[data-test="checkout"]');
+    this.cartItemNames = page.getByTestId('inventory-item-name');
+    this.continueShoppingBtn = page.getByTestId('continue-shopping');
+    this.checkoutBtn = page.getByTestId('checkout');
   }
   
   // Get all items in cart.
@@ -14,7 +14,7 @@ export class CartPage {
   // Remove an item from cart by name.
   async removeItem(itemName) {
     const slug = itemName.toLowerCase().replace(/\s+/g, '-');
-    const removeBtn = this.page.locator(`[data-test="remove-${slug}"]`);
+    const removeBtn = this.page.getByTestId(`remove-${slug}`);
     if ((await removeBtn.count()) === 0) {
         throw new Error(`Item "${itemName}" not found in cart.`);
     }

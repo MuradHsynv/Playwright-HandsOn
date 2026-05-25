@@ -2,11 +2,11 @@ export class InventoryPage {
   constructor(page) {
     this.page = page;
     this.title = page.locator('.title');
-    this.sortSelect = page.locator('[data-test="product-sort-container"]');
+    this.sortSelect = page.getByTestId('product-sort-container');
     this.prices = page.locator('.inventory_item_price');
     this.firstImage = page.locator('.inventory_item_img').first();
-    this.addBackpack = page.locator('[data-test="add-to-cart-sauce-labs-backpack"]');
-    this.addLight = page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]');
+    this.addBackpack = page.getByTestId('add-to-cart-sauce-labs-backpack');
+    this.addLight = page.getByTestId('add-to-cart-sauce-labs-bike-light');
     this.cartBadge = page.locator('.shopping_cart_badge');
     this.cartLink = page.locator('.shopping_cart_link');
     this.burgerBtn = page.locator('#react-burger-menu-btn');

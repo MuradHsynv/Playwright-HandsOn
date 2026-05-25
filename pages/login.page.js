@@ -1,10 +1,10 @@
 export class LoginPage {
   constructor(page) {
     this.page = page;
-    this.username = page.locator('[data-test="username"]');
-    this.password = page.locator('[data-test="password"]');
-    this.loginBtn = page.locator('[data-test="login-button"]');
-    this.errorMsg = page.locator('[data-test="error"]');
+    this.username = page.getByTestId('username');
+    this.password = page.getByTestId('password');
+    this.loginBtn = page.getByTestId('login-button');
+    this.errorMsg = page.getByTestId('error');
   }
 
   async goto() {
